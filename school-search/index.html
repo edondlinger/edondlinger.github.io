@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebraska School District Chronic Absenteeism Search</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- PapaParse -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Find your district's chronic absentee rate</h1>
+            <p class="subtitle">Search for a Nebraska school district to view chronic absenteeism trends.</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <input type="text" id="district-search" placeholder="Enter school district name..." autocomplete="off">
+                <div id="search-results-list" class="search-suggestions hidden"></div>
+            </div>
+
+            <div id="result-container" class="result-card hidden">
+                <h2 id="district-name"></h2>
+
+                <div class="chart-container">
+                    <canvas id="absenteeChart"></canvas>
+                </div>
+
+                <div class="data-table-container">
+                    <h3>Detailed Data</h3>
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>School Year</th>
+                                <th>Chronic Absenteeism Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table-body">
+                            <!-- Data rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
